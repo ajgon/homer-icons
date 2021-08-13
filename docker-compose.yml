@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  icons:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    volumes:
+      - .:/icons
+      - ~/.ssh/id_ed25519:/root/.ssh/id_ed25519
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+    env_file:
+      - .env

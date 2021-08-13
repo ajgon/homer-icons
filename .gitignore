@@ -1,1 +1,4 @@
 png/*/*.png
+releases/*
+!releases/.keep
+.env
