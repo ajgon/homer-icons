@@ -6,7 +6,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/icons
-      - ~/.ssh/id_ed25519:/root/.ssh/id_ed25519
-      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ~/.ssh/id_ed25519:/home/user/.ssh/id_ed25519
     env_file:
       - .env

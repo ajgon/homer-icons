@@ -48,7 +48,8 @@ function ziprelease() {
 
 function release() {
   echo -n "Releasing package... "
-  git add -A > /tmp/git.log 2>&1 && \
+  git fetch --all > /tmp/git.log 2>&1 && \
+  git add -A >> /tmp/git.log 2>&1 && \
   (git commit -m "release: ${VERSION}" -an || true) >> /tmp/git.log 2>&1 && \
   git tag ${VERSION} >> /tmp/git.log 2>&1 && \
   git push origin master --tags >> /tmp/git.log 2>&1 && \
